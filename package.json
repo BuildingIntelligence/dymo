@@ -15,7 +15,8 @@
     "labelwriter",
     "printer"
   ],
-  "author": "Building Intelligence Inc. <support@buildingintelligence.com>",
+  "author": "Travis Sinnott <travis@buildingintelligence.com>",
+  "contributors": [],
   "license": "GPL-2.0",
   "bugs": {
     "url": "https://github.com/BuildingIntelligence/dymo/issues"

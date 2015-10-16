@@ -1,7 +1,15 @@
-# dymo
+# Dymo
+
 Node.js module for interacting with Dymo LabelWriter printers using the DLS SDK
 
-# TODO
+## Installation
+
+``` bash
+$ npm install dymo --save
+```
+
+
+## TODO
 
 - [ ] add package.json
 - [ ] publish initial module
@@ -10,7 +18,7 @@ Node.js module for interacting with Dymo LabelWriter printers using the DLS SDK
 - [ ] examples
 - [ ] add Travis CI
 
-# Building
+## Building
 
 Prerequisits:
 
@@ -29,5 +37,12 @@ For gyp you will also need:
   * [Dymo Label(tm) v8.5.1](http://download.dymo.com/dymo/Software/Win/DLS8Setup.8.5.1.exe)
 
 
+## Contributing
 
-  
+Fork, add unit tests for any new or changed functionality.
+
+Lint and test your code.
+
+## Release History
+
+* 0.0.1 Initial release
