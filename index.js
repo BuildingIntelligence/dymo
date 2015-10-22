@@ -1,5 +1,4 @@
 'use strict';
 
-module.exports.hello = function() {
-	return "hello world!";
-};
+var dymo = require('bindings')('DymoHighLevelApi');
+module.exports = dymo;
