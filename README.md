@@ -10,14 +10,52 @@ You will need the latest [Dymo LabelWriter software](http://download.dymo.com/dy
 $ npm install dymo --save
 ```
 
+## Use
+
+This impementation is still very immature and experimental.  Not production ready. YMMV.
+
+```
+var dymo = require('dymo');
+var fs = require('fs');
+
+// It takes a second or two for initialization to complete.
+setTimeout(function(){
+
+	// Gets an array of IPrinter objects (Dymo printers on the current system)
+	dymo.printers(null, function(err, printers){
+		if (err) throw err;
+		console.log(printers);
+	});
+
+	// A print object;
+	var printArgs = {
+		printer: 'DYMO LabelWriter 450 (Copy 1)',	//name of printer
+		label: 'test.label',						//path to label
+		fields: {
+			name: 'Timmy',
+			barcode: '100360931'
+		},
+		images: {
+			photo: fs.readFileSync('face.png')
+		}
+	};
+
+	dymo.print(printArgs, function(err, res){
+		if (err) throw err;
+		console.log("Print job created.");
+	});
+
+}, 2000);
+
+```
+
 ## TODO
 
-- [x] add package.json
-- [x] publish initial module
-- [ ] create native bindings for high-level API calls
-- [ ] documentation
-- [ ] examples
-- [ ] add Travis CI
+- [ ] Test coverage
+- [ ] Build instructions
+- [ ] Make use of EventEmitter and fire Ready event after initialization
+- [ ] Improve API
+- [ ] Travis CI
 
 ## Building
 
