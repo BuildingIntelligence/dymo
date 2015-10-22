@@ -38,6 +38,14 @@ For gyp you will also need:
   * [Dymo LabelWriter v8.5.1](http://download.dymo.com/dymo/Software/Win/DLS8Setup.8.5.1.exe)
 
 
+## Publishing
+
+``` bash
+npm pack
+npm publish
+
+```
+
 ## Contributing
 
 Fork, add unit tests for any new or changed functionality.
