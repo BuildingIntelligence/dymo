@@ -1,6 +1,6 @@
 {
   "name": "dymo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Node.js addon for interfacing with Dymo LabelWriter printers",
   "main": "index.js",
   "scripts": {
