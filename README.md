@@ -2,6 +2,8 @@
 
 Node.js module for interacting with Dymo LabelWriter printers using the DLS SDK
 
+[![Code Climate](https://codeclimate.com/github/BuildingIntelligence/dymo/badges/gpa.svg)](https://codeclimate.com/github/BuildingIntelligence/dymo)
+
 ## Installation
 
 You will need the latest [Dymo LabelWriter software](http://download.dymo.com/dymo/Software/Win/DLS8Setup.8.5.1.exe) installed first.  This provides all of the dependent Dymo libraries.
