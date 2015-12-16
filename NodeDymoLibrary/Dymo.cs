@@ -27,7 +27,20 @@ namespace NodeDymoLib
                 IDictionary<string, object> fields = (IDictionary<string, object>)parameters["fields"];
                 foreach (var kv in fields)
                 {
-                    label.SetObjectText(kv.Key.ToUpper(), kv.Value.ToString());
+                    try
+                    {
+                        var k = kv.Key.ToUpper();
+                        var obj = label.GetObjectByName(k);
+                        if (obj != null)
+                        {
+                            var v = kv.Value.ToString();
+                            label.SetObjectText(k, v);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                    }
+
                 }
             }
 
@@ -36,11 +49,24 @@ namespace NodeDymoLib
                 IDictionary<string, object> images = (IDictionary<string, object>)parameters["images"];
                 foreach (var kv in images)
                 {
-                    label.SetImagePngData(kv.Key.ToUpper(), new MemoryStream((byte[])kv.Value));
+                    try
+                    {
+                        var k = kv.Key.ToUpper();
+                        var obj = label.GetObjectByName(k);
+                        if (obj != null)
+                        {
+                            var v = kv.Value;
+                            label.SetImagePngData(k, new MemoryStream((byte[])v));
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                    }
                 }
             }
-            
+
             label.Print((string)parameters["printer"]);
+
 
             return args;
         }
