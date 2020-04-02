@@ -7,6 +7,10 @@ var nodeDymoLib = path.join(libDir, 'NodeDymoLib.dll');
 var dymoLibPath = path.join('C:', 'Program Files (x86)', 'DYMO', 'DYMO Label Software', 'Framework', '.net4');
 dymoAssemblies = [ 'DYMO.Label.Framework.dll', 'DYMO.DLS.Runtime.dll', 'DYMO.Common.dll' ];
 
+if (!fs.existsSync(dymoLibPath + "/DYMO.LABEL.Framework.dll")) {
+	dymoLibPath =  path.join(dymoLibPath, "..");
+}
+
 var called = 0;
 
 var initDymoLib = function() {
